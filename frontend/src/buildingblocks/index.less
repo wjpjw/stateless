@@ -1,0 +1,99 @@
+@light-blue: #98ccf7;
+@almost-white: #f7fafd;
+@almost-black: #333;
+@nice-red: rgb(216, 104, 104);
+@miami-blue: rgb(17, 228, 243);
+@subtle-grey: #dcdfe6;
+@transparent-black: rgba(51, 51, 51, 0.568);
+@white: #fff;
+@side-border-minus: 5.7%;  // 收起后侧边栏横占比
+@side-border: 16.3%;  // 展开时侧边栏横占比
+@nav-border: 8.3%;  // 导航栏纵占比 
+@multiplier:2;		// 窗口太小时不得不把导航栏和侧边栏放大之放大倍数
+@golden-section: 61.8%;
+@footertop:92%;
+@upload-width: 300px;
+
+
+@grey-black: rgb(63, 62, 62);
+
+// 单屏应用默认禁用滚动条，内嵌组件可以有
+::-webkit-scrollbar{width: 0px; height: 0px;}  
+
+// chrome全去掉黄色自动填充背景
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	border: 1px solid #CCC!important;
+}
+	// 字体统一，取消a的下划线。
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption, {
+	font-family: "Hiragino Sans GB", "Microsoft Yahei";
+	text-decoration: none;
+	color: inherit; //让a的色彩和其他统一。
+}
+
+.background-image(@url; @width:100%; @height:100%) { 
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+/*
+	Mixins
+
+	建议所有组件的 position 都用 absolute 或 fixed 
+	顶级组件以浏览器为坐标系绝对定位，内部组件以父组件为坐标系绝对定位，所有尺寸数值都用百分比
+
+*/
+
+.cover(){
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+//将一个组件一分为二，upper取上半截
+.upper(@height:50%){
+	position: absolute;
+	top: 0%;
+	left:0%;
+	right:0%;
+	height: @height;
+}
+
+.lower(@height:50%){
+	position: absolute;
+	top: 1-@height;
+	left:0%;
+	right:0%;
+	height: @height;
+}
+
+//三个定位mixin，分别对应完全居中、垂直居中、水平居中
+.center() {  
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.v-middle() {  
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+}
+.h-middle() {  
+	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
+}
+
+// 正方形图片切成圆形，长宽比不太高的话，也可以用
+.circular-squareP(@width:50px){
+    border-radius:50%;
+    width: @width;
+    height: @width;
+}
+.circle-avatar{
+	.circular-squareP(45px);
+}
+
