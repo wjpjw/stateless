@@ -29,9 +29,9 @@
 </template>
 
 <script>
-  import cover1 from '@/assets/cover1.jpg'
-  import background1 from '@/assets/background1.jpg'
-  import Logo from '@/assets/logo.png'
+  import cover1 from '#/assets/cover1.jpg'
+  import background1 from '#/assets/background1.jpg'
+  import Logo from '#/assets/logo.png'
   export default {
     data() {
       return {

@@ -33,7 +33,7 @@
 </style>
 
 <script>
-  import Logo from '@/assets/logo.png'
+  import Logo from '#/assets/logo.png'
   import UserDropdown from './UserDropdown'
   import LittleIcon from '&/LittleIcon'
   export default {

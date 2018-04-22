@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ForceNet from '@/buildingblocks/components/ForceNet'
+import ForceNet from '&/ForceNet'
 export default {
   data () {
     return {
