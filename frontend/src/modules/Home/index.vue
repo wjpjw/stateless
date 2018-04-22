@@ -90,7 +90,7 @@
 .card{
   cursor: pointer;
   margin-left:2%;
-  margin-top:20px;
+  margin-top: 3%;
   height: 100%;
   width: 12%;
   float: left;
@@ -135,7 +135,7 @@
 }
 
 #row2{
-  margin-top:-8px;
+   // margin-top: -3px;
 }
 
 #my-carousel {

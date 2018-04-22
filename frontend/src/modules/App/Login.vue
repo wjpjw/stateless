@@ -66,7 +66,7 @@
 </script>
 
 <style lang="less" scoped>
-@import "../index";
+@import "~#/index";
 .footer{
     position:fixed;
     top:@footertop;

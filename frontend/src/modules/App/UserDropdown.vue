@@ -18,10 +18,10 @@
 </template>
 
 <style lang="less" scoped>
-@import "../index.less";
+@import "~#/index.less";
 @text-width:80%;
 @username-height:60%;
-  
+
 // 头像
 #avatar{
   .v-middle();
@@ -76,12 +76,11 @@ el-dropdown-link{
       AvatarCircle
     },
     computed: {
-      isAdmin () {return this.$store.state.isAdmin},
-      username() {return this.$store.state.username}
+      isAdmin () {return this.$store.state.AppStore.isAdmin},
+      username() {return this.$store.state.AppStore.username}
     },
     methods: {
       logoutnow(){
-        console.log("w")
         this.$store.commit('set_username', "尚未登录")
       }
     }

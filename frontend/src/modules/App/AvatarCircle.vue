@@ -13,7 +13,7 @@
     },
     computed: {
       avatarIndex () {
-        if(this.$store.state.isAdmin) return 0
+        if(this.$store.state.AppStore.isAdmin) return 0
         return 1
       },
     },
@@ -21,7 +21,7 @@
 </script>
 
 <style lang="less" scoped>
-@import "../index.less";
+@import "~#/index.less";
 .circle-avatar{
   .circular-squareP(45px);
 }

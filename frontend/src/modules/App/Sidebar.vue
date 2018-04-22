@@ -46,7 +46,7 @@
 
 
 <style lang="less" scoped>
-@import "../index.less";
+@import "~#/index.less";
 
 // 避免特殊化的颜色
 .el-menu-item.is-active {
@@ -105,7 +105,6 @@
   font-size: 90%;
   min-width: 100px;
 }
-
 @media screen and (max-height: 500px) { 
   #head-router-link{
     height: @nav-border*@multiplier;
@@ -117,14 +116,11 @@
   .collapsebox{
     left: 0.5*@side-border-minus*@multiplier;
   }
-
 }
-
 </style>
 
-
 <script>
-  import LittleIcon from './LittleIcon'
+  import LittleIcon from '&/LittleIcon'
   import Logo from '@/assets/logo.png'
   export default {
     data() {

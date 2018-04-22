@@ -5,7 +5,8 @@
     :show-file-list="false"
     :on-success="handleAvatarSuccess"
     :before-upload="beforeAvatarUpload"
-    :on-progress="startSpinner"
+    :on-progress="onProgress"
+    :on-error="onError" 
     :disabled="uploadModel.isDisabled">
     <template v-if="uploadModel.imageUrl">
       <img  :src="uploadModel.imageUrl" class="avatar">
@@ -61,33 +62,36 @@
       }
     },
     methods: {
+      onError(err, file, fileList){  //由于没有后端所以肯定error，这里把它当作success处理，实际项目里要改。
+        this.handleAvatarSuccess(err, file)
+      },
+      onProgress(event, file, fileList){
+        console.log(event)
+        this.percentage=Math.ceil(event.percent); //没必要精确，实际上10%粒度人眼看起来都没问题
+      },
       startSpinner(event, file, fileList){
         this.uploadModel.isSpinning=true
         this.percentage=0
-        this.interval=setInterval(
-          () => {
-            this.percentage+= 10
-            if(this.percentage==100){
-              clearInterval(this.interval)
-            }
-          }, 1)
       },
       handleAvatarSuccess(res, file) {
+        console.log(res)
+        this.percentage=100;
         this.uploadModel.isSpinning=false
         this.uploadModel.imageUrl = URL.createObjectURL(file.raw)
         this.uploadModel.isDisabled=true
-        // active++ 
+        this.uploadModel.nextwhat() 
       },
       beforeAvatarUpload(file) {
-        const isJPG = (file.type === 'image/jpeg' ||  file.type=== 'image/png');
-        const isLt2M = file.size / 1024 / 1024 < 2;
+        const isJPG = (file.type === 'image/jpeg' ||  file.type=== 'image/png')
+        const isLt2M = file.size / 1024 / 1024 < 2
         if (!isJPG) {
-          this.$message.error('上传头像图片只能是 JPG 或 PNG 格式!');
+          this.$message.error('上传头像图片只能是 JPG 或 PNG 格式!')
         }
         if (!isLt2M) {
-          this.$message.error('上传头像图片大小不能超过 2MB!');
+          this.$message.error('上传头像图片大小不能超过 2MB!')
         }
-        return isJPG && isLt2M;
+        this.startSpinner()
+        return isJPG && isLt2M
       }
     }
   }

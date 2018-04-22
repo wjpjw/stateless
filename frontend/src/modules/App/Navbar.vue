@@ -6,19 +6,18 @@
       {{item.name}}
     </el-breadcrumb-item>
   </el-breadcrumb>
-
+  <!-- 标题组件 -->
   <div v-else class="thetitle">
     <img class="circle-avatar" :src="LogoSrc" :width="LogoSize" style="display:inline-block;margin-top:14%;"></img>
     <div style="letter-spacing: 0.04em;left: 61%;display:inline-block;position:absolute;width:200px;top:18%;font-size:23px">{{this.$store.state.AppStore.appTitle}} </div>
   </div>
-
   <!-- 用户组件 -->
   <user-dropdown id="user"></user-dropdown>
 </el-menu>
 </template>
 
 <style lang="less" scoped>
-  @import "../index.less";
+  @import "~#/index.less";
   .thetitle{
     .v-middle();
     left:5%;
@@ -31,23 +30,12 @@
     .v-middle();
     left: 3%;
   }
-
-  // 将激活后的border换成白色，color沿用原色。
-  .el-menu--horizontal>.el-menu-item.is-active {
-    border-bottom: 0.2px solid #fff;
-    color: @almost-black;
-  }
-
-  .el-menu--horizontal {
-    border-right: none;
-    border-bottom: none;
-  }
 </style>
 
 <script>
   import Logo from '@/assets/logo.png'
   import UserDropdown from './UserDropdown'
-  import LittleIcon from './LittleIcon'
+  import LittleIcon from '&/LittleIcon'
   export default {
     data(){
       return {

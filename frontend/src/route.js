@@ -1,13 +1,13 @@
 //字符串参数是chunk name，不同chunk独立加载。
-const Page0 = r => require.ensure([], () => r(require('../pages/overview/Page0')), 'Page0') 
-const Page1 = r => require.ensure([], () => r(require('../pages/overview/Page1')), 'Page1')
-const Page2 = r => require.ensure([], () => r(require('../pages/overview/Page2')), 'Page2')
-const Page3 = r => require.ensure([], () => r(require('../pages/overview/Page3')), 'Page3')
-const Page4 = r => require.ensure([], () => r(require('../pages/overview/Page4')), 'Page4')
-const Page5 = r => require.ensure([], () => r(require('../pages/overview/Page5')), 'Page5')
-const Service = r => require.ensure([], () => r(require('../pages/Service')), 'Service')
-const About = r => require.ensure([], () => r(require('../pages/About')), 'About')
-const Home = r => require.ensure([], () => r(require('../pages/Home')), 'Home')
+const Page0 = r => require.ensure([], () => r(require('@/modules/Page0')), 'Page0') 
+const Page1 = r => require.ensure([], () => r(require('@/modules/Page1')), 'Page1')
+const Page2 = r => require.ensure([], () => r(require('@/modules/Page2')), 'Page2')
+const Page3 = r => require.ensure([], () => r(require('@/modules/Page3')), 'Page3')
+const Page4 = r => require.ensure([], () => r(require('@/modules/Page4')), 'Page4')
+const Page5 = r => require.ensure([], () => r(require('@/modules/Page5')), 'Page5')
+const Service = r => require.ensure([], () => r(require('@/modules/Service')), 'Service')
+const About = r => require.ensure([], () => r(require('@/modules/About')), 'About')
+const Home = r => require.ensure([], () => r(require('@/modules/Home')), 'Home')
 
 //移除每个字段首个字符中可能存在的slash——存在于顶层路由中
 function removeSlash(path){

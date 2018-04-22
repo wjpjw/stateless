@@ -25,7 +25,7 @@
 // 却暂时没有采用独立的命名空间，所以命名时候要遵守规则避免冲突
 // 命名空间在大规模的项目中可能是必要的，如果启用
 // 则getter、setter、mutation路径都要加前缀，颇为麻烦。
-import routeConst from "./consts/route"
+import routeConst from "@/route"
 
 const getters = {
     isCollapse: state=>state.isCollapse,
@@ -82,10 +82,10 @@ const AppStore={state, getters, actions, mutations}
 export {AppStore}
 
 // 下面是组件定义，&是src/buildingblocks/components
-import Sidebar from "&/Sidebar"
-import Login from "&/Login"
-import Navbar from "&/Navbar"
-import "../../static/fontawesome-all.js"
+import Sidebar from "./Sidebar"
+import Login from "./Login"
+import Navbar from "./Navbar"
+import "@/../static/fontawesome-all.js"
 import { mapGetters } from 'vuex'
 
 export default{
@@ -120,6 +120,15 @@ export default{
 <!-- 修改UI框架的样式必须不加scoped，但这会导致潜在的生产构建时的样式加载顺序问题，最好统一放在App.vue下面 -->
 <style lang="less">
 @import "~#/index";
+// 将激活后的border换成白色，color沿用原色。
+.el-menu--horizontal>.el-menu-item.is-active {
+  border-bottom: 0.2px solid #fff;
+  color: @almost-black;
+}
+.el-menu--horizontal {
+  border-right: none;
+  border-bottom: none;
+}
 .el-upload__tip{
   position: absolute;
   font-size:50%;
