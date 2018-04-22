@@ -1,5 +1,37 @@
 # Stateless
-一个前端解决方案。
 
-[![StatelessDemo]](http://baidu.com)  
-[StatelessDemo]:http://www.baidu.com/img/bdlogo.gif "百度Logo"  
+一个前端解决方案。
+![](./StatelessDemo.gif)
+
+## 目标
+
+1. 让前端开发更敏捷。
+2. 把前端项目工作环境从脏乱差泥潭拯救出来，让代码本身呈现赏心悦目的建筑美感。
+3. 从架构层次上解决三个技术问题：前端路由、模块分包懒加载、对用户隐匿源码。
+
+## 工具链
+1. 语言：ES6 + Less 
+2. 开发环境依赖：参考package.json
+3. 项目依赖：vue全家桶（vue、vue-router、vuex）、基于vue的UI库（element-ui、vue-d3-network）。
+
+
+## Stateless采用了哪些技术方案
+1. Vue提供了MVVM机制：基于数据进行渲染，修改数据触发页面变化。
+2. Vue-router实现前端路由。
+3. Vuex实现前端状态机的统一管理。
+4. Element-UI是一个在vue基础上开发的UI库。
+5. Webpack提供灵活强大的前端项目预处理加编译功能，与npm生态配合，事实上构成了一个完备的开发环境。
+6. Less是一个外观清爽的css预处理语言，功能不如sass，但完全够用。
+7. ES6是目前主流浏览器都支持的JavaScript标准，增加了很多特性，ES5相比之下就显得一无是处了。
+
+上述方案的整合自然而然地隐喻了前后端分离——前端成为一个完全自给自足的严肃软件项目，所有隐式耦合与侵入式代码都被斩去；与此同时后端可以完全不必关心界面实现，只提供API接口。
+
+## Stateless本身的创新之处
+1.  
+
+
+## Stateless为何更加敏捷
+
+## Stateless为何更加整洁
+
+## 
