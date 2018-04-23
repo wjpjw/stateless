@@ -1,8 +1,7 @@
 # Stateless
 
 一个前端解决方案。
-![](./StatelessDemo.gif)
-
+![](https://github.com/wjpjw/Stateless/blob/master/StatelessDemo.gif)
 ## 目标
 
 1. 让前端开发更敏捷。
