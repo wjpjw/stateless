@@ -3,8 +3,8 @@
 </template>
 
 <script>
-  import adminAvatar from '#/assets/admin-avatar.png'
-  import userAvatar from '#/assets/user-avatar.png'
+  import adminAvatar from '^/admin-avatar.png'
+  import userAvatar from '^/user-avatar.png'
   export default {
     data() {
       return {

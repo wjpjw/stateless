@@ -46,7 +46,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-@import "~@/buildingblocks/index";
+@import "~#/index";
 .el-collapse-item{
     text-align: left;
 }

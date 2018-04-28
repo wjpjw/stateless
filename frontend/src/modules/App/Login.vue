@@ -29,9 +29,9 @@
 </template>
 
 <script>
-  import cover1 from '#/assets/cover1.jpg'
-  import background1 from '#/assets/background1.jpg'
-  import Logo from '#/assets/logo.png'
+  import cover1 from '^/cover1.jpg'
+  import background1 from '^/background1.jpg'
+  import Logo from '^/logo.png'
   export default {
     data() {
       return {
@@ -45,9 +45,9 @@
       }
     },
     mounted(){
-      this.$loading().close();
-      console.log("加载完成！")
-      console.log(this.$store)
+      //this.$loading().close();   //如果main.js里开了loading，就在这关掉。
+      //console.log("加载完成！")
+      //console.log(this.$store)
     },
     methods: {
       loginnow(){

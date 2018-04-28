@@ -28,7 +28,7 @@
 </template>
 
 <style lang="less">
-  @import "../index";
+  @import "~#/index";
   .avatar-uploader{
       border: 1px solid #d9d9d9;
       border-radius: 0px;

@@ -120,6 +120,37 @@ export default{
 <!-- 修改UI框架的样式必须不加scoped，但这会导致潜在的生产构建时的样式加载顺序问题，最好统一放在App.vue下面 -->
 <style lang="less">
 @import "~#/index";
+.cell .el-input {
+    right: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+}
+.el-select .el-input__suffix {
+    display: none;
+}
+.cell .el-input .el-input__inner{
+  height: 100%!important;
+  width: 100%;
+  text-align: center;
+  border-radius: 0px;
+  border:none;
+} 
+.el-select .el-input {
+    height: 100%;
+}
+.el-select .el-input__inner{
+  height: 100%!important;
+  width: 100%;
+  text-align: center;
+  border-radius: 0px;
+  border:none;
+}
+[class*=" el-icon-"], [class^=el-icon-] {
+    font-weight: 900;
+}
 // 将激活后的border换成白色，color沿用原色。
 .el-menu--horizontal>.el-menu-item.is-active {
   border-bottom: 0.2px solid #fff;
